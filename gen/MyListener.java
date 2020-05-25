@@ -1,5 +1,6 @@
 import org.antlr.v4.runtime.tree.TerminalNode;
 
+import java.io.*;
 import java.util.*;
 
 public class MyListener extends pblgrammarBaseListener {
@@ -38,7 +39,42 @@ public class MyListener extends pblgrammarBaseListener {
             case "getSnapChart":
                 String tmp2 = ctx.variable_value().function_parameters().getText();
                 List<String> funtionCallParam = variable.get(tmp2);
+                String command = "astrolog -q";
+                for(int j = 0; j < funtionCallParam.size(); ++j) {
+                    command += ' ' + funtionCallParam.get(j);
+                }
+                command += " -E";
+                //var a = snapshot(day:31, month:12, year:2012, 14:45, EET, 12E32, 14N26)
+                try {
+                    FileWriter writer = new FileWriter("C:\\Users\\HP\\Desktop\\output.txt");
+                    PrintWriter printWriter = new PrintWriter(writer);
+                    final Process process = Runtime.getRuntime().exec("cmd /c cd C:\\Users\\HP\\Desktop\\astr && " + command);
+                    final InputStream in = process.getInputStream();
+                    int ch;
+                    while((ch = in.read()) != -1) {
+                        printWriter.print((char)ch);
+                    }
+                    printWriter.close();
+                    File myFile = new File("C:\\Users\\HP\\Desktop\\output.txt");
+                    Scanner scanner = new Scanner(myFile);
+                    List<String> lines = new ArrayList<>();
 
+                    while(scanner.hasNextLine()) {
+                        lines.add(scanner.nextLine());
+                    }
+                    scanner.close();
+                    lines.remove(0);
+                    int k;
+                    for(k = 15; k < lines.size();) {
+                        lines.remove(k);
+                    }
+                    for(i = 0; i < lines.size(); ++i) {
+                        System.out.println(lines.get(i));
+                    }
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 break;
             default:
                 System.out.println("Helou");
