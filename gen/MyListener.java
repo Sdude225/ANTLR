@@ -44,7 +44,6 @@ public class MyListener extends pblgrammarBaseListener {
                     command += ' ' + funtionCallParam.get(j);
                 }
                 command += " -E";
-                //var a = snapshot(day:31, month:12, year:2012, 14:45, EET, 12E32, 14N26)
                 try {
                     FileWriter writer = new FileWriter("C:\\Users\\HP\\Desktop\\output.txt");
                     PrintWriter printWriter = new PrintWriter(writer);
@@ -71,13 +70,70 @@ public class MyListener extends pblgrammarBaseListener {
                     for(i = 0; i < lines.size(); ++i) {
                         System.out.println(lines.get(i));
                     }
+                    System.out.println("\n");
 
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                System.out.println("\r\n \r\n");
                 break;
+            case "planetsPos":
+                String tmp3 = ctx.variable_value().function_parameters().getText();
+                List<String> funtionCallParam2 = variable.get(tmp3);
+                String command2 = "astrolog /S -q";
+                for(int j = 0; j < funtionCallParam2.size(); ++j) {
+                    command2 += ' ' + funtionCallParam2.get(j);
+                }
+                command2 += " -E";
+                try {
+                    final Process process = Runtime.getRuntime().exec("cmd /c cd C:\\Users\\HP\\Desktop\\astr && " + command2);
+                    final InputStream in = process.getInputStream();
+                    int ch;
+                    while((ch = in.read()) != -1) {
+                        System.out.print((char)ch);;
+                    }
+
+                }
+                catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                System.out.println("\r\n \r\n");
+                break;
+            case "planetsInfo":
+                try {
+                    final Process process = Runtime.getRuntime().exec("cmd /c cd C:\\Users\\HP\\Desktop\\astr && astrolog /HS");
+                    final InputStream in = process.getInputStream();
+                    int ch;
+                    int z = 0;
+                    while((ch = in.read()) != -1) {
+                        System.out.print((char)ch);;
+                    }
+
+                }
+                catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                System.out.println("\r\n \r\n");
+                break;
+
+            case "getHelp":
+                try {
+                    final Process process = Runtime.getRuntime().exec("cmd /c cd C:\\Users\\HP\\Desktop\\astr && astrolog /HI");
+                    final InputStream in = process.getInputStream();
+                    int ch;
+                    int z = 0;
+                    while((ch = in.read()) != -1) {
+                        System.out.print((char)ch);;
+                    }
+
+                }
+                catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                System.out.println("\r\n \r\n");
+                break;
+
             default:
-                System.out.println("Helou");
                 break;
         }
 

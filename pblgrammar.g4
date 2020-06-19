@@ -22,6 +22,7 @@ variable_name : STRING
 
 variable_value : GENDER DELIM GNDNAME DELIM
                | TYPEOFCALC DELIM function_parameters DELIM
+               | TYPEOFCALC DELIM DELIM
                | PLANET DELIM PLANET_NAME DELIM
                | LOCATION DELIM DEG COMA DEG DELIM
                | SNAPSHOT DELIM date_of_birth COMA time_of_birth COMA zone COMA location DELIM
@@ -102,6 +103,9 @@ PLANET_NAME : 'mercury'
             ;
 
 TYPEOFCALC : 'getSnapChart'
+           | 'planetsPos'
+           | 'planetsInfo'
+           | 'getHelp'
            | 'moon_sign'
            | 'sun_sign'
            | 'getSignHouse'

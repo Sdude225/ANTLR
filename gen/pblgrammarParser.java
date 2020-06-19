@@ -453,10 +453,10 @@ public class pblgrammarParser extends Parser {
 		Variable_valueContext _localctx = new Variable_valueContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_variable_value);
 		try {
-			setState(85);
+			setState(88);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case GENDER:
+			switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(51);
@@ -469,7 +469,7 @@ public class pblgrammarParser extends Parser {
 				match(DELIM);
 				}
 				break;
-			case TYPEOFCALC:
+			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(55);
@@ -482,76 +482,85 @@ public class pblgrammarParser extends Parser {
 				match(DELIM);
 				}
 				break;
-			case PLANET:
+			case 3:
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(60);
-				match(PLANET);
+				match(TYPEOFCALC);
 				setState(61);
 				match(DELIM);
 				setState(62);
-				match(PLANET_NAME);
-				setState(63);
 				match(DELIM);
 				}
 				break;
-			case LOCATION:
+			case 4:
 				enterOuterAlt(_localctx, 4);
 				{
+				setState(63);
+				match(PLANET);
 				setState(64);
-				match(LOCATION);
-				setState(65);
 				match(DELIM);
+				setState(65);
+				match(PLANET_NAME);
 				setState(66);
-				match(DEG);
-				setState(67);
-				match(COMA);
-				setState(68);
-				match(DEG);
-				setState(69);
 				match(DELIM);
 				}
 				break;
-			case SNAPSHOT:
+			case 5:
 				enterOuterAlt(_localctx, 5);
 				{
-				setState(70);
-				match(SNAPSHOT);
-				setState(71);
+				setState(67);
+				match(LOCATION);
+				setState(68);
 				match(DELIM);
+				setState(69);
+				match(DEG);
+				setState(70);
+				match(COMA);
+				setState(71);
+				match(DEG);
 				setState(72);
-				date_of_birth();
-				setState(73);
-				match(COMA);
-				setState(74);
-				time_of_birth();
-				setState(75);
-				match(COMA);
-				setState(76);
-				zone();
-				setState(77);
-				match(COMA);
-				setState(78);
-				location();
-				setState(79);
 				match(DELIM);
 				}
 				break;
-			case ASTROSIGN:
+			case 6:
 				enterOuterAlt(_localctx, 6);
 				{
-				setState(81);
-				match(ASTROSIGN);
-				setState(82);
+				setState(73);
+				match(SNAPSHOT);
+				setState(74);
 				match(DELIM);
-				setState(83);
-				match(SIGN);
-				setState(84);
+				setState(75);
+				date_of_birth();
+				setState(76);
+				match(COMA);
+				setState(77);
+				time_of_birth();
+				setState(78);
+				match(COMA);
+				setState(79);
+				zone();
+				setState(80);
+				match(COMA);
+				setState(81);
+				location();
+				setState(82);
 				match(DELIM);
 				}
 				break;
-			default:
-				throw new NoViableAltException(this);
+			case 7:
+				enterOuterAlt(_localctx, 7);
+				{
+				setState(84);
+				match(ASTROSIGN);
+				setState(85);
+				match(DELIM);
+				setState(86);
+				match(SIGN);
+				setState(87);
+				match(DELIM);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -599,28 +608,28 @@ public class pblgrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(88); 
+			setState(91); 
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
 				{
 				{
-				setState(87);
+				setState(90);
 				variable_name();
 				}
 				}
-				setState(90); 
+				setState(93); 
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==STRING );
-			setState(94);
+			setState(97);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMA) {
 				{
-				setState(92);
+				setState(95);
 				match(COMA);
-				setState(93);
+				setState(96);
 				variable_name();
 				}
 			}
@@ -669,11 +678,11 @@ public class pblgrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(96);
+			setState(99);
 			match(DEG);
-			setState(97);
+			setState(100);
 			match(COMA);
-			setState(98);
+			setState(101);
 			match(DEG);
 			}
 		}
@@ -715,7 +724,7 @@ public class pblgrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(100);
+			setState(103);
 			match(STRING);
 			}
 		}
@@ -771,27 +780,27 @@ public class pblgrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(102);
-			match(DAY);
-			setState(103);
-			match(COLON);
-			setState(104);
-			match(DIGIT);
 			setState(105);
-			match(COMA);
+			match(DAY);
 			setState(106);
-			match(MONTH);
+			match(COLON);
 			setState(107);
-			match(COLON);
-			setState(108);
 			match(DIGIT);
-			setState(109);
+			setState(108);
 			match(COMA);
+			setState(109);
+			match(MONTH);
 			setState(110);
-			match(YEAR);
-			setState(111);
 			match(COLON);
+			setState(111);
+			match(DIGIT);
 			setState(112);
+			match(COMA);
+			setState(113);
+			match(YEAR);
+			setState(114);
+			match(COLON);
+			setState(115);
 			match(DIGIT);
 			}
 		}
@@ -837,11 +846,11 @@ public class pblgrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(114);
+			setState(117);
 			match(DIGIT);
-			setState(115);
+			setState(118);
 			match(COLON);
-			setState(116);
+			setState(119);
 			match(DIGIT);
 			}
 		}
@@ -886,9 +895,9 @@ public class pblgrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(118);
+			setState(121);
 			match(PRINT);
-			setState(119);
+			setState(122);
 			variable_name();
 			}
 		}
@@ -932,7 +941,7 @@ public class pblgrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(121);
+			setState(124);
 			_la = _input.LA(1);
 			if ( !(_la==TRUE || _la==FALSE) ) {
 			_errHandler.recoverInline(this);
@@ -956,35 +965,36 @@ public class pblgrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3!~\4\2\t\2\4\3\t\3"+
-		"\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f"+
-		"\t\f\4\r\t\r\4\16\t\16\3\2\6\2\36\n\2\r\2\16\2\37\3\2\3\2\3\3\3\3\3\3"+
-		"\5\3\'\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3\7\3\7"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3!\u0081\4\2\t\2\4"+
+		"\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t"+
+		"\13\4\f\t\f\4\r\t\r\4\16\t\16\3\2\6\2\36\n\2\r\2\16\2\37\3\2\3\2\3\3\3"+
+		"\3\3\3\5\3\'\n\3\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\3\6\3\6\3"+
+		"\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7"+
 		"\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3"+
-		"\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7X\n\7\3"+
-		"\b\6\b[\n\b\r\b\16\b\\\3\b\3\b\5\ba\n\b\3\t\3\t\3\t\3\t\3\n\3\n\3\13\3"+
-		"\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f"+
-		"\3\r\3\r\3\r\3\16\3\16\3\16\2\2\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2"+
-		"\3\3\2\17\20\2z\2\35\3\2\2\2\4&\3\2\2\2\6(\3\2\2\2\b-\3\2\2\2\n\63\3\2"+
-		"\2\2\fW\3\2\2\2\16Z\3\2\2\2\20b\3\2\2\2\22f\3\2\2\2\24h\3\2\2\2\26t\3"+
-		"\2\2\2\30x\3\2\2\2\32{\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36\37\3\2\2"+
-		"\2\37\35\3\2\2\2\37 \3\2\2\2 !\3\2\2\2!\"\7\2\2\3\"\3\3\2\2\2#\'\5\6\4"+
-		"\2$\'\5\b\5\2%\'\5\30\r\2&#\3\2\2\2&$\3\2\2\2&%\3\2\2\2\'\5\3\2\2\2()"+
-		"\7\3\2\2)*\5\n\6\2*+\7\37\2\2+,\5\f\7\2,\7\3\2\2\2-.\7\21\2\2./\5\n\6"+
-		"\2/\60\7!\2\2\60\61\7\32\2\2\61\62\7!\2\2\62\t\3\2\2\2\63\64\7\31\2\2"+
-		"\64\13\3\2\2\2\65\66\7\22\2\2\66\67\7 \2\2\678\7\26\2\28X\7 \2\29:\7\30"+
-		"\2\2:;\7 \2\2;<\5\16\b\2<=\7 \2\2=X\3\2\2\2>?\7\16\2\2?@\7 \2\2@A\7\27"+
-		"\2\2AX\7 \2\2BC\7\23\2\2CD\7 \2\2DE\7\24\2\2EF\7\35\2\2FG\7\24\2\2GX\7"+
-		" \2\2HI\7\4\2\2IJ\7 \2\2JK\5\24\13\2KL\7\35\2\2LM\5\26\f\2MN\7\35\2\2"+
-		"NO\5\22\n\2OP\7\35\2\2PQ\5\20\t\2QR\7 \2\2RX\3\2\2\2ST\7\5\2\2TU\7 \2"+
-		"\2UV\7\25\2\2VX\7 \2\2W\65\3\2\2\2W9\3\2\2\2W>\3\2\2\2WB\3\2\2\2WH\3\2"+
-		"\2\2WS\3\2\2\2X\r\3\2\2\2Y[\5\n\6\2ZY\3\2\2\2[\\\3\2\2\2\\Z\3\2\2\2\\"+
-		"]\3\2\2\2]`\3\2\2\2^_\7\35\2\2_a\5\n\6\2`^\3\2\2\2`a\3\2\2\2a\17\3\2\2"+
-		"\2bc\7\24\2\2cd\7\35\2\2de\7\24\2\2e\21\3\2\2\2fg\7\31\2\2g\23\3\2\2\2"+
-		"hi\7\b\2\2ij\7\34\2\2jk\7\32\2\2kl\7\35\2\2lm\7\t\2\2mn\7\34\2\2no\7\32"+
-		"\2\2op\7\35\2\2pq\7\n\2\2qr\7\34\2\2rs\7\32\2\2s\25\3\2\2\2tu\7\32\2\2"+
-		"uv\7\34\2\2vw\7\32\2\2w\27\3\2\2\2xy\7\r\2\2yz\5\n\6\2z\31\3\2\2\2{|\t"+
-		"\2\2\2|\33\3\2\2\2\7\37&W\\`";
+		"\7\3\7\5\7[\n\7\3\b\6\b^\n\b\r\b\16\b_\3\b\3\b\5\bd\n\b\3\t\3\t\3\t\3"+
+		"\t\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\16\3\16\3\16\2\2\17\2\4\6\b\n\f\16\20\22"+
+		"\24\26\30\32\2\3\3\2\17\20\2~\2\35\3\2\2\2\4&\3\2\2\2\6(\3\2\2\2\b-\3"+
+		"\2\2\2\n\63\3\2\2\2\fZ\3\2\2\2\16]\3\2\2\2\20e\3\2\2\2\22i\3\2\2\2\24"+
+		"k\3\2\2\2\26w\3\2\2\2\30{\3\2\2\2\32~\3\2\2\2\34\36\5\4\3\2\35\34\3\2"+
+		"\2\2\36\37\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 !\3\2\2\2!\"\7\2\2\3\"\3"+
+		"\3\2\2\2#\'\5\6\4\2$\'\5\b\5\2%\'\5\30\r\2&#\3\2\2\2&$\3\2\2\2&%\3\2\2"+
+		"\2\'\5\3\2\2\2()\7\3\2\2)*\5\n\6\2*+\7\37\2\2+,\5\f\7\2,\7\3\2\2\2-.\7"+
+		"\21\2\2./\5\n\6\2/\60\7!\2\2\60\61\7\32\2\2\61\62\7!\2\2\62\t\3\2\2\2"+
+		"\63\64\7\31\2\2\64\13\3\2\2\2\65\66\7\22\2\2\66\67\7 \2\2\678\7\26\2\2"+
+		"8[\7 \2\29:\7\30\2\2:;\7 \2\2;<\5\16\b\2<=\7 \2\2=[\3\2\2\2>?\7\30\2\2"+
+		"?@\7 \2\2@[\7 \2\2AB\7\16\2\2BC\7 \2\2CD\7\27\2\2D[\7 \2\2EF\7\23\2\2"+
+		"FG\7 \2\2GH\7\24\2\2HI\7\35\2\2IJ\7\24\2\2J[\7 \2\2KL\7\4\2\2LM\7 \2\2"+
+		"MN\5\24\13\2NO\7\35\2\2OP\5\26\f\2PQ\7\35\2\2QR\5\22\n\2RS\7\35\2\2ST"+
+		"\5\20\t\2TU\7 \2\2U[\3\2\2\2VW\7\5\2\2WX\7 \2\2XY\7\25\2\2Y[\7 \2\2Z\65"+
+		"\3\2\2\2Z9\3\2\2\2Z>\3\2\2\2ZA\3\2\2\2ZE\3\2\2\2ZK\3\2\2\2ZV\3\2\2\2["+
+		"\r\3\2\2\2\\^\5\n\6\2]\\\3\2\2\2^_\3\2\2\2_]\3\2\2\2_`\3\2\2\2`c\3\2\2"+
+		"\2ab\7\35\2\2bd\5\n\6\2ca\3\2\2\2cd\3\2\2\2d\17\3\2\2\2ef\7\24\2\2fg\7"+
+		"\35\2\2gh\7\24\2\2h\21\3\2\2\2ij\7\31\2\2j\23\3\2\2\2kl\7\b\2\2lm\7\34"+
+		"\2\2mn\7\32\2\2no\7\35\2\2op\7\t\2\2pq\7\34\2\2qr\7\32\2\2rs\7\35\2\2"+
+		"st\7\n\2\2tu\7\34\2\2uv\7\32\2\2v\25\3\2\2\2wx\7\32\2\2xy\7\34\2\2yz\7"+
+		"\32\2\2z\27\3\2\2\2{|\7\r\2\2|}\5\n\6\2}\31\3\2\2\2~\177\t\2\2\2\177\33"+
+		"\3\2\2\2\7\37&Z_c";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
